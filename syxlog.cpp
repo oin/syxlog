@@ -11,7 +11,7 @@ extern "C" {
 // Uncomment this line if you want that all non-realtime status bytes abort the current SysEx, as per the MIDI specification.
 // #define RESPECT_SYSEX_ABORT 1
 
-static uint8_t sysex_id_byte = 0x70;
+static constexpr uint8_t sysex_id_byte = 0x70;
 
 class syxlog_parser {
 public:
