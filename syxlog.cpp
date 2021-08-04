@@ -106,7 +106,7 @@ static void notify_proc(const MIDINotification* message, void*) {
 	const auto info = reinterpret_cast<const MIDIObjectAddRemoveNotification*>(message);
 	if(info->childType != kMIDIObjectType_Source) return;
 	
-	MIDIEndpointRef source = info->child;
+	MIDIEndpointRef source = reinterpret_cast<MIDIEndpointRef>(info->child);
 	MIDIUniqueID uid = 0;
 	MIDIObjectGetIntegerProperty(source, kMIDIPropertyUniqueID, &uid);
 	if(uid == 0) return;
